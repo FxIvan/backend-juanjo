@@ -6,11 +6,20 @@ const {
   updatedProperty,
   deletedProperty,
   allProperties,
+  getPropertyById,
 } = require("../controllers");
+const {
+  boomHandler,
+  protect,
+  admin,
+  mitigate,
+  joiValidation,
+} = require("../middleware");
 
-router.route("/created").post(createdProperty);
-router.route("/updated/:id").post(updatedProperty);
-router.route("/deleted/:id").delete(deletedProperty);
+router.route("/info/:id").get(getPropertyById);
+router.route("/created").post(admin, createdProperty, boomHandler);
+router.route("/updated/:id").post(admin, updatedProperty, boomHandler);
+router.route("/deleted/:id").delete(admin, deletedProperty, boomHandler);
 router.route("/all").get(allProperties);
 
 module.exports = router;

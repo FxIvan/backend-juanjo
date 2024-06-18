@@ -3,6 +3,7 @@ const {
   updatedProperty,
   deletedProperty,
   allProperties,
+  getPropertyById,
 } = require("./propertyController");
 
 module.exports = {
@@ -10,4 +11,5 @@ module.exports = {
   updatedProperty,
   deletedProperty,
   allProperties,
+  getPropertyById,
 };

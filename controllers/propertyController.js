@@ -129,14 +129,28 @@ const deletedProperty = asyncHandler(async (req, res) => {
   try {
     await Property.findOneAndDelete({ _id: id });
     res.status(200).json({ message: "Property deleted successfully" });
-  } catch (err) {}
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
 
 const allProperties = asyncHandler(async (req, res) => {
   try {
     const allProperties = await Property.find();
     res.status(200).json(allProperties);
-  } catch (err) {}
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+const getPropertyById = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  try {
+    const property = await Property.findById(id);
+    res.status(200).json(property);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
 
 module.exports = {
@@ -144,4 +158,5 @@ module.exports = {
   updatedProperty,
   deletedProperty,
   allProperties,
+  getPropertyById,
 };
