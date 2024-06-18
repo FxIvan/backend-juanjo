@@ -127,6 +127,8 @@ const updatedProperty = asyncHandler(async (req, res) => {
 const deletedProperty = asyncHandler(async (req, res) => {
   const { id } = req.params;
   try {
+    await Property.findOneAndDelete({ _id: id });
+    res.status(200).json({ message: "Property deleted successfully" });
   } catch (err) {}
 });
 

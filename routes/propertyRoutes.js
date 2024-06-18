@@ -10,7 +10,7 @@ const {
 
 router.route("/created").post(createdProperty);
 router.route("/updated/:id").post(updatedProperty);
-router.route("/deleted/:id").post(deletedProperty);
+router.route("/deleted/:id").delete(deletedProperty);
 router.route("/all").get(allProperties);
 
 module.exports = router;

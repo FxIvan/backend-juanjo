@@ -53,3 +53,60 @@
   ]
 }
 ```
+
+> localhost:4000/api/property/updated/6671957a4486a84164370036
+
+```
+{
+  "title": "Luxury Condo UPDATED",
+  "description": "A luxurious condo with stunning city views.",
+  "price": 750000,
+  "addressBody": {
+    "street": "789 Pine Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zipCode": "94108",
+    "country": "USA",
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    }
+  },
+  "propertyType": "land",
+  "status": "sale",
+  "featuresBody": {
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1500,
+    "lotSize": 0,
+    "yearBuilt": 2015,
+    "parking": true,
+    "garage": true,
+    "pool": true,
+    "heating": "forced air",
+    "cooling": "central air",
+    "petsAllowed": false,
+    "fireplace": true,
+    "balcony": true,
+    "flooringType": "tile",
+    "furnished": false,
+    "hoaFees": 300
+  },
+  "amenities": [
+    "swimming pool",
+    "sauna",
+    "gym"
+  ],
+  "images": [
+    {
+      "url": "https://example.com/image3.jpg",
+      "description": "Bedroom with city view"
+    },
+    {
+      "url": "https://example.com/image4.jpg",
+      "description": "Spacious living room"
+    }
+  ]
+}
+
+```
