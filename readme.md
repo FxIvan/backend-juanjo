@@ -111,8 +111,16 @@
 
 ```
 
+### Parar contenedor:
+
 > docker stop ID_CONTAINER ID_CONTAINER
+
+### Eliminar contenedor:
+
 > docker rm ID_CONTAINER ID_CONTAINER
+
+### Correr docker compose
+
 > docker-compose up -d
 
 ### Para ver los logs es:
