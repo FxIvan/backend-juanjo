@@ -71,8 +71,16 @@ const deletedProperty = asyncHandler(async (req, res) => {
   } catch (err) {}
 });
 
+const allProperties = asyncHandler(async (req, res) => {
+  try {
+    const allProperties = await Property.find();
+    res.status(200).json(allProperties);
+  } catch (err) {}
+});
+
 module.exports = {
   createdProperty,
   updatedProperty,
   deletedProperty,
+  allProperties,
 };
