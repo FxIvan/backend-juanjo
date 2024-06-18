@@ -110,3 +110,11 @@
 }
 
 ```
+
+> docker stop ID_CONTAINER ID_CONTAINER
+> docker rm ID_CONTAINER ID_CONTAINER
+> docker-compose up -d
+
+### Para ver los logs es:
+
+> docker logs ID_CONTAINER
