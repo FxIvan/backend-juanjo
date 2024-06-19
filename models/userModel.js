@@ -28,29 +28,7 @@ const userSchema = mongoose.Schema(
         message: "Email already exists",
       },
     },
-    username: {
-      type: String,
-      default: undefined, // Set to undefined instead of null
-      validate: {
-        validator: async function (value) {
-          if (typeof value === "undefined") return true; // Allow undefined
-          // Check for uniqueness, avoid actual user document
-          const count = await this.model("User").countDocuments({
-            username: value,
-            _id: { $ne: this._id },
-          });
-
-          return count === 0;
-        },
-        message: "Username already exists",
-      },
-    },
-    group: { type: mongoose.Schema.Types.ObjectId, ref: "Group" },
     role: { type: String }, //groupOwner
-    gravatar: {
-      type: String,
-      required: false,
-    },
     emailToken: {
       type: String,
       required: false,
